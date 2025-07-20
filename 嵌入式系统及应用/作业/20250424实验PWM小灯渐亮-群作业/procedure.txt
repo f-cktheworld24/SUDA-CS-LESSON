@@ -1,0 +1,17 @@
+05_UserBoard\user.h line39改为#define PWM_USER   	 PWM_PIN1 	    //用户PWM输出 ，GEC39
+
+main.c line37:pwm_init(PWM_USER,1500,1000,10.0,PWM_CENTER,PWM_MINUS);   //PWM输出初始化
+改为pwm_init(PWM_USER,1500,1000,10.0,PWM_EDGE,PWM_MINUS);   //PWM输出初始化
+
+pwm.c line52PWM_ARR[TIM_i]改成TIM16，简化程序
+
+
+
+使用STM32芯片的TIM16模块控制PB8引脚的电平变化实现PB8引脚小灯亮度变化，不要用STM32Cube HAL库
+TIM16的配置看SEM32L4xx参考手册TIM16
+PTB8是绿灯，占空比越大越暗，反之越亮
+让灯先亮再调整占空比
+TIM16用的总线是APB2
+pwm.c line 409	    RCC->APB1ENR1 |= RCC_APB1ENR1_TIM2EN;
+改成RCC->APB2ENR |= RCC_APB2ENR_TIM16EN;
+使用功能14
