@@ -1,0 +1,1 @@
+把原项目工程的main.c中BLUE_LIGHT全部改成RED_LIGHT
