@@ -1,0 +1,11 @@
+名词解释:
+SRAM、DRAM、lb、bne、addi、bltu、slti、USB、ADC、EPROM、PWM、UART
+简答题：
+Cache工作原理
+A/D转换基本概念、转换精度
+Flash编程基本模式与用途
+PWM基本含义、分辨率(举例)
+输入捕捉
+编程题：
+三数中的中间值
+A/D转换基本变成
